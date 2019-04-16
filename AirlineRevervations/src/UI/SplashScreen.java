@@ -18,7 +18,7 @@ public class SplashScreen extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        window.setTitle("thenewboston - JavaFX");
+        window.setTitle("Airline Reservation System");
         button = new Button("Click me");
 
         StackPane layout = new StackPane();
