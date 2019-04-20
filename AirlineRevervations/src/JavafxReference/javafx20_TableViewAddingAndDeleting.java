@@ -1,5 +1,5 @@
 package JavafxReference; 
-
+/*
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -116,7 +116,7 @@ public class javafx20_TableViewAddingAndDeleting extends Application {
 }
 
 
- /* class Product {
+  class Product {
 
     private String name;
     private double price;

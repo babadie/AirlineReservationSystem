@@ -3,6 +3,8 @@ package JavafxReference;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
@@ -20,6 +22,7 @@ public class javafx00_SimpleGUI extends Application {
         window = primaryStage;
         window.setTitle("thenewboston - JavaFX");
         button = new Button("Click me");
+        
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
