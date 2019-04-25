@@ -23,6 +23,7 @@ public class javafx00_SimpleGUI extends Application {
         window.setTitle("thenewboston - JavaFX");
         button = new Button("Click me");
         
+        
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);

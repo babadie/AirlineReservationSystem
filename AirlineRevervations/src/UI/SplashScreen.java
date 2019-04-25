@@ -1,33 +1,51 @@
-package UI;
+package UI; 
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
+import java.io.File;
+
+import javafx.application.*;
+import javafx.geometry.Insets;
+import javafx.stage.*;
+import javafx.scene.*;
+import javafx.scene.layout.*;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
+
 
 public class SplashScreen extends Application {
+	public static void main(String[] args) {
+		System.out.println("Launching JavaFX");
+		launch(args);
+		System.out.println("Finished");
 
-    Stage window;
-    Button button;
+	}
+	
+	
+	
+	@Override 
+	public void start(Stage primaryStage) {
+		
+		primaryStage.setTitle("Hello World");
+	    BorderPane root = new BorderPane();
+	    root.setPadding(new Insets(10,10,10,10));
+	    Scene scene = new Scene(root, 600, 550);
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+	    File file = new File("/Users/benitoabadie/Eclipse Workspace/AirlineReservationProject/AirlineReservationSystem/AirlineRevervations/travel.jpg");
+	    Image image = new Image(file.toURI().toString());
+	    ImageView iv = new ImageView(image);
+	    iv.setFitHeight(500);
+	    iv.setFitWidth(500);
+	    Text tx = new Text("Welcome to Cheap Travel...");
+	    tx.setFont(new Font("Times New Roman", 20));
+	    root.setBottom(tx);
+	    
+	    
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        window = primaryStage;
-        window.setTitle("Airline Reservation System");
-        button = new Button("Click me");
-
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-        Scene scene = new Scene(layout, 300, 250);
-
-        window.setScene(scene);
-        window.show();
-    }
-
+	    root.getChildren().addAll(iv);
+	    primaryStage.setScene(scene);
+	    primaryStage.show();
+	}
+	
 
 }
