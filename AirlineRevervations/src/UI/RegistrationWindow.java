@@ -11,7 +11,9 @@ import javafx.scene.control.TextField;
 import javafx.application.*;
 import javafx.geometry.*;
 import javafx.stage.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
@@ -33,30 +35,30 @@ public class RegistrationWindow extends Application {
 	public void start(Stage primaryStage) throws Exception {
 		
 		registerButton = new Button("Create Account"); 
-		firstName = new Label("First Name"); 
+		firstName = new Label("First Name: "); 
 		fnInput = new TextField(); 
-		lastName = new Label("Last Name"); 
+		lastName = new Label("Last Name: "); 
 		lnInput = new TextField(); 
-		address = new Label("Address");
+		address = new Label("Address: ");
 		addressInput = new TextField(); 
-		zipcode = new Label("Zipcode");
+		zipcode = new Label("Zipcode: ");
 		zipInput = new TextField(); 
-		state = new Label("State"); 
+		state = new Label("State: "); 
 		stateInput = new TextField(); 
-		username = new Label("Username"); 
+		username = new Label("Username: "); 
 		userInput = new TextField(); 
-		password = new Label("Password"); 
+		password = new Label("Password: "); 
 		passwordInput = new PasswordField(); 
-		ssn = new Label("Social Security Number"); 
+		ssn = new Label("Social Security Number: "); 
 		ssnInput = new PasswordField(); 
 		ssnInput.setPromptText("xxx-xx-xxxx"); 
-		securityQuestion = new Label("Security Question");
+		securityQuestion = new Label("Security Question: ");
 		questionInput = new TextField(); 
-		securityAnswer = new Label("Answer to Security Question"); 
+		securityAnswer = new Label("Answer to Security Question: "); 
 		answerInput = new TextField(); 
 
 		GridPane layout = new GridPane();
-		layout.setPadding(new Insets(30,30,30,30));
+		layout.setPadding(new Insets(30,30,15,30));
 		layout.setVgap(15);
 		layout.setHgap(12);
 		
@@ -80,13 +82,21 @@ public class RegistrationWindow extends Application {
 		GridPane.setConstraints(questionInput, 2, 8);
 		GridPane.setConstraints(securityAnswer, 1, 9);
 		GridPane.setConstraints(answerInput, 2, 9);
-		GridPane.setConstraints(registerButton, 2, 10); 
 		
 		layout.getChildren().addAll(firstName, fnInput, lastName, lnInput, address, addressInput, zipcode, zipInput,
-				state, stateInput, username, userInput, password, passwordInput, ssn, ssnInput, securityQuestion, questionInput, securityAnswer, answerInput,
-				registerButton);
+				state, stateInput, username, userInput, password, passwordInput, ssn, ssnInput, securityQuestion, questionInput, securityAnswer, answerInput);
+		layout.setAlignment(Pos.BASELINE_CENTER);
 		
-		Scene scene = new Scene(layout,500,500); 
+		HBox buttonMenu = new HBox(15); 
+		buttonMenu.getChildren().add(registerButton);
+		buttonMenu.setAlignment(Pos.BASELINE_CENTER);
+		buttonMenu.setPadding(new Insets(5, 15, 30, 15));
+		
+		BorderPane borderPane = new BorderPane(); 
+		borderPane.setCenter(layout);
+		borderPane.setBottom(buttonMenu);
+		
+		Scene scene = new Scene(borderPane,500,530); 
 
 		primaryStage.setTitle("Create Account");
 		primaryStage.setScene(scene); 
@@ -95,7 +105,8 @@ public class RegistrationWindow extends Application {
 		// after user clicks create account
 		StackPane layout2 = new StackPane(); 
 		Label accCreated = new Label("Account Created!");
-		layout2.getChildren().addAll(accCreated); 
+		Button login = new Button("Login"); 
+		layout2.getChildren().addAll(accCreated, login); 
 		Scene scene2 = new Scene(layout2,300,300); 
 		
 		registerButton.setOnAction(e -> {
