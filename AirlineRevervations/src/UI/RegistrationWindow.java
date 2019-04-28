@@ -1,6 +1,7 @@
 package UI;
 
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -11,6 +12,8 @@ import javafx.application.*;
 import javafx.geometry.*;
 import javafx.stage.*;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 
 
 public class RegistrationWindow extends Application {
@@ -23,7 +26,8 @@ public class RegistrationWindow extends Application {
 	
 	Button registerButton;
 	Label firstName, lastName, address, zipcode, state, username, password, ssn, securityQuestion, securityAnswer; 
-	TextField fnInput, lnInput, addressInput, zipInput, stateInput, userInput, passInput, ssnInput, questionInput, answerInput; 
+	TextField fnInput, lnInput, addressInput, zipInput, stateInput, userInput, questionInput, answerInput; 
+	PasswordField passwordInput, ssnInput;  
 	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -42,9 +46,9 @@ public class RegistrationWindow extends Application {
 		username = new Label("Username"); 
 		userInput = new TextField(); 
 		password = new Label("Password"); 
-		passInput = new TextField(); 
+		passwordInput = new PasswordField(); 
 		ssn = new Label("Social Security Number"); 
-		ssnInput = new TextField(); 
+		ssnInput = new PasswordField(); 
 		ssnInput.setPromptText("xxx-xx-xxxx"); 
 		securityQuestion = new Label("Security Question");
 		questionInput = new TextField(); 
@@ -69,17 +73,17 @@ public class RegistrationWindow extends Application {
 		GridPane.setConstraints(username, 1, 5);
 		GridPane.setConstraints(userInput, 2, 5);
 		GridPane.setConstraints(password, 1, 6);
-		GridPane.setConstraints(passInput, 2, 6);
+		GridPane.setConstraints(passwordInput, 2, 6);
 		GridPane.setConstraints(ssn, 1, 7);
 		GridPane.setConstraints(ssnInput, 2, 7);
 		GridPane.setConstraints(securityQuestion, 1, 8);
 		GridPane.setConstraints(questionInput, 2, 8);
 		GridPane.setConstraints(securityAnswer, 1, 9);
 		GridPane.setConstraints(answerInput, 2, 9);
-		GridPane.setConstraints(registerButton, 1, 10); 
+		GridPane.setConstraints(registerButton, 2, 10); 
 		
 		layout.getChildren().addAll(firstName, fnInput, lastName, lnInput, address, addressInput, zipcode, zipInput,
-				state, stateInput, username, userInput, password, passInput, ssn, ssnInput, securityQuestion, questionInput, securityAnswer, answerInput,
+				state, stateInput, username, userInput, password, passwordInput, ssn, ssnInput, securityQuestion, questionInput, securityAnswer, answerInput,
 				registerButton);
 		
 		Scene scene = new Scene(layout,500,500); 
@@ -88,8 +92,81 @@ public class RegistrationWindow extends Application {
 		primaryStage.setScene(scene); 
 		primaryStage.show();
 		
-		registerButton.setOnAction(e -> registerButtonClick() );
+		// after user clicks create account
+		StackPane layout2 = new StackPane(); 
+		Label accCreated = new Label("Account Created!");
+		layout2.getChildren().addAll(accCreated); 
+		Scene scene2 = new Scene(layout2,300,300); 
+		
+		registerButton.setOnAction(e -> {
 			
+			if (validateZip(zipInput, zipInput.getText()) && validateState(stateInput, stateInput.getText()) && 
+					validateSSN(ssnInput, ssnInput.getText())) {
+				registerButtonClick() ;
+				primaryStage.setScene(scene2);
+			}
+			else {
+				
+				Stage invalidInput = new Stage(); 
+
+				invalidInput.initModality(Modality.APPLICATION_MODAL); 
+				invalidInput.setTitle("Invalid Input");
+				
+				Label label = new Label("Please input a valid state, zipcode, and social security number"); 
+				
+				VBox invalidInputLayout = new VBox(10); 
+				invalidInputLayout.getChildren().addAll(label); 
+				invalidInputLayout.setAlignment(Pos.CENTER); 
+				
+				Scene invalidInputScene = new Scene(invalidInputLayout,500,300); 
+				invalidInput.setScene(invalidInputScene); 
+				invalidInput.showAndWait(); 
+				
+			}
+		});
+			
+	}
+	
+	private boolean validateZip(TextField input, String message) {
+		
+		if (input.getLength() != 5) 
+			return false; 
+		
+		try {
+			
+			Integer.parseInt(input.getText()); 
+			return true; 
+			
+		} catch (NumberFormatException e) {
+			
+			return false; 
+			
+		}
+		
+	}
+	
+	private boolean validateState(TextField input, String message) {
+		
+		if (input.getLength() == 2) {
+			for (int i = 0; i < 2; i++) {
+				if (Character.isLetter(input.getText().charAt(i)) == false)
+					return false; 
+			}
+			return true; 
+		}
+		
+		else 
+			return false; 
+		
+	}
+	
+	private boolean validateSSN(TextField input, String message) {
+		
+		if (input.getText().matches("^(\\d{3}-?\\d{2}-?\\d{4})$"))
+			return true; 
+		else 
+			return false; 
+
 	}
 	
 	private void registerButtonClick() {
@@ -112,7 +189,7 @@ public class RegistrationWindow extends Application {
 			myStmt.setString(4, zipInput.getText());
 			myStmt.setString(5, stateInput.getText());
 			myStmt.setString(6, userInput.getText());
-			myStmt.setString(7, passInput.getText());
+			myStmt.setString(7, passwordInput.getText());
 			myStmt.setString(8, ssnInput.getText());
 			myStmt.setString(9, questionInput.getText());
 			myStmt.setString(10, answerInput.getText());
