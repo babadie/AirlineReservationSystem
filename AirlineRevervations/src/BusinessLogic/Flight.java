@@ -12,6 +12,7 @@ import javafx.beans.InvalidationListener;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 
+
 public class Flight implements ObservableList {	
 private String airline;	
 private int flightNumber;
