@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneRegister" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.RegisterControl">
+   <children>
+      <BorderPane layoutX="25.0" layoutY="25.0" prefHeight="450.0" prefWidth="650.0">
+         <top>
+            <Label fx:id="peachy" alignment="CENTER" text="Peachy Airlines" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Monospaced Regular" size="21.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </Label>
+         </top>
+         <center>
+            <GridPane fx:id="gridPane" alignment="CENTER" maxHeight="315.0" maxWidth="550.0" prefHeight="315.0" prefWidth="539.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="246.0" minWidth="10.0" prefWidth="243.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="242.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="firstName" text="First Name: ">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lastName" text="Last Name: " GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="address" text="Address:" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="zip" text="ZIP Code:" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="state" text="State:" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="username" text="Username:" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="password" text="Password:" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ssn" text="Social Security Number:" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="question" text="Security Question:" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="answer" text="Answer to Security Question:" GridPane.rowIndex="9">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="firstNameInput" GridPane.columnIndex="1" />
+                  <TextField fx:id="lastNameInput" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="addressInput" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+                  <TextField fx:id="zipInput" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="stateInput" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="usernameInput" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="questionInput" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <TextField fx:id="answerInput" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <PasswordField fx:id="ssnInput" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <PasswordField fx:id="passwordInput" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </GridPane>
+         </center>
+         <opaqueInsets>
+            <Insets top="30.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+         <bottom>
+            <HBox fx:id="hBox" alignment="CENTER" prefHeight="56.0" prefWidth="519.0" spacing="30.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="mainMenu" alignment="CENTER" mnemonicParsing="false" onAction="#mainMenuClick" text="Main Menu">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="createAccount" mnemonicParsing="false" onAction="#registerButtonClick" text="Create Account">
+                     <font>
+                        <Font name="Monospaced Regular" size="13.0" />
+                     </font>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </opaqueInsets>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
