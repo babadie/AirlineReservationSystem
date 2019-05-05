@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="700.0" prefWidth="800.0" stylesheets="@table.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="User_Interface.UserTableController">
    <children>
-      <TableView fx:id="table" layoutX="-2.0" prefHeight="392.0" prefWidth="800.0" stylesheets="@table1.css">
+      <TableView fx:id="table" layoutX="85.0" layoutY="50.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn fx:id="col_firstName" prefWidth="68.0" text="firstName" />
+          <TableColumn fx:id="col_firstName" prefWidth="74.0" text="firstName" />
           <TableColumn fx:id="col_lastName" prefWidth="66.0" text="lastName" />
-            <TableColumn fx:id="col_address" prefWidth="60.0" text="address" />
-            <TableColumn fx:id="col_zipcode" prefWidth="59.0" text="zipcode" />
-            <TableColumn fx:id="col_state" prefWidth="67.0" text="state" />
-            <TableColumn fx:id="col_username" prefWidth="82.0" text="username" />
-            <TableColumn fx:id="col_password" prefWidth="73.0" text="password" />
-            <TableColumn fx:id="col_email" prefWidth="69.0" text="email" />
-            <TableColumn fx:id="col_ssn" prefWidth="52.0" text="ssn" />
-            <TableColumn fx:id="col_securityQuestion" prefWidth="111.0" text="securityQuestion" />
-            <TableColumn fx:id="col_answer" prefWidth="118.0" text="answer" />
+            <TableColumn fx:id="col_address" prefWidth="62.0" text="address" />
+            <TableColumn fx:id="col_zipcode" prefWidth="61.0" text="zipcode" />
+            <TableColumn fx:id="col_state" prefWidth="64.0" text="state" />
+            <TableColumn fx:id="col_username" prefWidth="68.0" text="username" />
+            <TableColumn fx:id="col_password" prefWidth="65.0" text="password" />
+            <TableColumn fx:id="col_email" prefWidth="50.0" text="email" />
+            <TableColumn fx:id="col_ssn" prefWidth="42.0" text="ssn" />
+            <TableColumn fx:id="col_securityQuestion" prefWidth="149.0" text="securityQuestion" />
+            <TableColumn fx:id="col_answer" prefWidth="63.0" text="answer" />
         </columns>
       </TableView>
    </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
 </AnchorPane>

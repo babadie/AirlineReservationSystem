@@ -20,45 +20,45 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.fxml.Initializable;
 
 
-public class UserController implements Initializable {
+public class UserTableController implements Initializable {
 	
 	@FXML
-	private TableView<User> table; 
+	private TableView<RegisterUser> table; 
 	
 	@FXML
-	private TableColumn<User, String> col_firstName;
+	private TableColumn<RegisterUser, String> col_firstName;
 	
 	@FXML
-	private TableColumn<User, String> col_lastName;
+	private TableColumn<RegisterUser, String> col_lastName;
 	
 	@FXML
-	private TableColumn<User, String> col_address;
+	private TableColumn<RegisterUser, String> col_address;
 	
 	@FXML
-	private TableColumn<User, String> col_zipcode;
+	private TableColumn<RegisterUser, String> col_zipcode;
 	
 	@FXML
-	private TableColumn<User, String> col_state;
+	private TableColumn<RegisterUser, String> col_state;
 	
 	@FXML
-	private TableColumn<User, String> col_username;
+	private TableColumn<RegisterUser, String> col_username;
 	
 	@FXML
-	private TableColumn<User, String> col_password;
+	private TableColumn<RegisterUser, String> col_password;
 	
 	@FXML
-	private TableColumn<User, String> col_email;
+	private TableColumn<RegisterUser, String> col_email;
 	
 	@FXML
-	private TableColumn<User, String> col_ssn;
+	private TableColumn<RegisterUser, String> col_ssn;
 	
 	@FXML
-	private TableColumn<User, String> col_securityQuestion;
+	private TableColumn<RegisterUser, String> col_securityQuestion;
 	
 	@FXML
-	private TableColumn<User, String> col_answer;
+	private TableColumn<RegisterUser, String> col_answer;
 	
-	ObservableList<User> oblist = FXCollections.observableArrayList();
+	ObservableList<RegisterUser> oblist = FXCollections.observableArrayList();
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -69,7 +69,7 @@ public class UserController implements Initializable {
 			ResultSet rs = con.createStatement().executeQuery("select * from user");
 			
 			while (rs.next()) {
-				oblist.add(new User(rs.getString("firstName"),
+				oblist.add(new RegisterUser(rs.getString("firstName"),
 						            rs.getString("lastName"),
 						            rs.getString("address"),
 						            rs.getString("zipcode"),
