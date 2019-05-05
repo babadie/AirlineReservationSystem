@@ -1,0 +1,54 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneForgot" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.ForgotControl">
+   <children>
+      <Button fx:id="mainMenu" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#mainMenuClick" text="Main Menu">
+         <font>
+            <Font name="Monospaced Regular" size="13.0" />
+         </font>
+      </Button>
+      <BorderPane layoutX="75.0" layoutY="64.0" prefHeight="350.0" prefWidth="550.0">
+         <center>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" prefHeight="49.0" prefWidth="266.0" text="Enter your username:">
+                     <font>
+                        <Font name="Monospaced Regular" size="15.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="30.0" />
+                     </padding>
+                  </Label>
+                  <TextField fx:id="usernameInput" />
+               </children>
+               <padding>
+                  <Insets left="30.0" right="30.0" />
+               </padding>
+            </VBox>
+         </center>
+         <top>
+            <Label fx:id="peachy" alignment="CENTER" prefHeight="68.0" prefWidth="376.0" text="Peachy Airlines" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Monospaced Regular" size="25.0" />
+               </font>
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+         </top>
+      </BorderPane>
+      <Button fx:id="submit" layoutX="318.0" layoutY="422.0" mnemonicParsing="false" onAction="#submitForgotPassword" text="Submit">
+         <font>
+            <Font name="Monospaced Regular" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
