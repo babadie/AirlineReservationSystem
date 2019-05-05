@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -13,11 +14,11 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchorPaneRegister" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="600.0" styleClass="root" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.RegisterControl">
+<AnchorPane fx:id="anchorPaneRegister" minHeight="500.0" minWidth="700.0" prefHeight="500.0" prefWidth="600.0" styleClass="root" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RegisterControl">
    <children>
       <BorderPane layoutX="25.0" layoutY="25.0" prefHeight="450.0" prefWidth="650.0">
          <top>
-            <Label fx:id="peachy" alignment="CENTER" text="PeachState Airlines" BorderPane.alignment="CENTER">
+            <Label fx:id="peachy" alignment="CENTER" text="PeachState Airlines" textFill="WHITE" BorderPane.alignment="CENTER">
                <font>
                   <Font name="Monospaced Regular" size="21.0" />
                </font>
@@ -48,52 +49,52 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label fx:id="firstName" text="First Name: ">
+                  <Label fx:id="firstName" text="First Name: " textFill="WHITE">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lastName" text="Last Name: " GridPane.rowIndex="1">
+                  <Label fx:id="lastName" text="Last Name: " textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="address" text="Address:" GridPane.rowIndex="2">
+                  <Label fx:id="address" text="Address:" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="zip" text="ZIP Code:" GridPane.rowIndex="3">
+                  <Label fx:id="zip" text="ZIP Code:" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="state" text="State:" GridPane.rowIndex="4">
+                  <Label fx:id="state" text="State:" textFill="WHITE" GridPane.rowIndex="4">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="username" text="Username:" GridPane.rowIndex="5">
+                  <Label fx:id="username" text="Username:" textFill="WHITE" GridPane.rowIndex="5">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="password" text="Password:" GridPane.rowIndex="6">
+                  <Label fx:id="password" text="Password:" textFill="WHITE" GridPane.rowIndex="6">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="ssn" text="Social Security Number:" GridPane.rowIndex="7">
+                  <Label fx:id="ssn" text="Social Security Number:" textFill="WHITE" GridPane.rowIndex="7">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="question" text="Security Question:" GridPane.rowIndex="8">
+                  <Label fx:id="question" text="Security Question:" textFill="WHITE" GridPane.rowIndex="8">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
                   </Label>
-                  <Label fx:id="answer" text="Answer to Security Question:" GridPane.rowIndex="9">
+                  <Label fx:id="answer" text="Answer to Security Question:" textFill="WHITE" GridPane.rowIndex="9">
                      <font>
                         <Font name="Monospaced Regular" size="13.0" />
                      </font>
@@ -104,10 +105,10 @@
                   <TextField fx:id="zipInput" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="stateInput" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <TextField fx:id="usernameInput" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <TextField fx:id="questionInput" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                   <TextField fx:id="answerInput" GridPane.columnIndex="1" GridPane.rowIndex="9" />
                   <PasswordField fx:id="ssnInput" GridPane.columnIndex="1" GridPane.rowIndex="7" />
                   <PasswordField fx:id="passwordInput" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ChoiceBox fx:id="questionInput" prefWidth="259.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
                </children>
                <opaqueInsets>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

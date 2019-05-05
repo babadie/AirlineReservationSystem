@@ -6,8 +6,6 @@
  * Tables                                      *
  *                                                                             *
  ******************************************************************************/
- 
- 
 .table-view, .tree-table-view {
     /* Constants used throughout the tableview. */
     -fx-table-header-border-color: transparent;

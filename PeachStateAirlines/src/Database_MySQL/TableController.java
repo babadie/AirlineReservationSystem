@@ -1,4 +1,4 @@
-package application;
+package Database_MySQL;
 
 import java.net.URL;
 import java.sql.Connection;

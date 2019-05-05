@@ -1,4 +1,4 @@
-package application;
+package User_Interface;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -8,6 +8,8 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import Database_MySQL.DBConnector;
+import Database_MySQL.TableController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

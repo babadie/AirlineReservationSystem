@@ -1,4 +1,4 @@
-package application;
+package Database_MySQL;
 
 public class ModelTable {
 	
